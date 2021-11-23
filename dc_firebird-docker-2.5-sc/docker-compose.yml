@@ -1,0 +1,18 @@
+# v2 sintax
+version: '2'
+networks:
+  default:
+    external:
+      name: alfanet
+
+# Services
+services:
+  firebird:
+    image: firebird:latest
+    container_name: firebird
+    volumes:
+      - ./firebird/data:/firebird/data
+    ports:
+      - "3050:3050"
+    environment:
+      - ISC_PASSWORD=senhaaqui
